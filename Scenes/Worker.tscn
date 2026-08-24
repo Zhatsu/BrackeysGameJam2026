@@ -1,0 +1,26 @@
+[gd_scene format=3 uid="uid://cglg0mc2oic12"]
+
+[ext_resource type="Texture2D" uid="uid://b80nh1iu128sd" path="res://icon.svg" id="1_r72bl"]
+[ext_resource type="Script" uid="uid://bl3ociwa5trqy" path="res://Scripts/worker.gd" id="1_vwm8u"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_bhunq"]
+size = Vector2(119, 114)
+
+[node name="CharacterBody2D" type="CharacterBody2D" unique_id=660683282]
+scale = Vector2(0.43, 0.43)
+script = ExtResource("1_vwm8u")
+move_speed = 200.0
+
+[node name="Icon" type="Sprite2D" parent="." unique_id=1867404142]
+position = Vector2(-1, -3)
+scale = Vector2(0.43, 0.43)
+texture = ExtResource("1_r72bl")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1424836578]
+position = Vector2(-0.5, -3)
+scale = Vector2(0.43, 0.43)
+shape = SubResource("RectangleShape2D_bhunq")
+
+[node name="NavigationAgent2D" type="NavigationAgent2D" parent="." unique_id=1023264056]
+avoidance_enabled = true
+max_speed = 9999999.0

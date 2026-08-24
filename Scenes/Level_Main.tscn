@@ -1,0 +1,110 @@
+[gd_scene format=3 uid="uid://chrpuqfpmmvh2"]
+
+[ext_resource type="Script" uid="uid://dv81mbrnmigfl" path="res://Scripts/level_main.gd" id="1_8khs0"]
+[ext_resource type="Script" uid="uid://cgj6e5atj6881" path="res://Scripts/point_of_interest.gd" id="1_rxnvo"]
+[ext_resource type="Script" uid="uid://n2wokcechmfp" path="res://Resources/poi_data.gd" id="2_0deml"]
+
+[sub_resource type="Resource" id="Resource_bhunq"]
+script = ExtResource("2_0deml")
+poi_name = "Entrance"
+metadata/_custom_type_script = "uid://n2wokcechmfp"
+
+[sub_resource type="Resource" id="Resource_0deml"]
+script = ExtResource("2_0deml")
+poi_type = 1
+poi_name = "workstation1"
+metadata/_custom_type_script = "uid://n2wokcechmfp"
+
+[sub_resource type="Resource" id="Resource_8khs0"]
+script = ExtResource("2_0deml")
+poi_type = 2
+poi_name = "Break Room"
+metadata/_custom_type_script = "uid://n2wokcechmfp"
+
+[sub_resource type="NavigationPolygon" id="NavigationPolygon_0deml"]
+vertices = PackedVector2Array(382.27344, 9.96875, 382.27344, 207.03125, 8.03125, 206.71094, 9.578125, 9.03125)
+polygons = Array[PackedInt32Array]([PackedInt32Array(0, 1, 2, 3)])
+outlines = Array[PackedVector2Array]([PackedVector2Array(392.2672, 217.03929, 392.2672, 0, -0.33991957, -0.9955931, -2.0395176, 216.70743)])
+
+[node name="Factory" type="Node2D" unique_id=970983487]
+scale = Vector2(2.9418724, 3.0132794)
+script = ExtResource("1_8khs0")
+
+[node name="Entrance" type="StaticBody2D" parent="." unique_id=605460423]
+position = Vector2(274.65503, 0)
+script = ExtResource("1_rxnvo")
+data = SubResource("Resource_bhunq")
+
+[node name="Polygon2D" type="Polygon2D" parent="Entrance" unique_id=1772049256]
+position = Vector2(1, 1)
+color = Color(0.48007977, 0.99999994, 0.81498444, 1)
+polygon = PackedVector2Array(0, -1, 55, -1, 55, 40, 0, 40)
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Entrance" unique_id=1264335346]
+position = Vector2(28.213326, 20.907454)
+scale = Vector2(2.3596783, 1.9159459)
+
+[node name="Entrance_Text" type="CanvasLayer" parent="Entrance" unique_id=1615480245]
+
+[node name="Label" type="Label" parent="Entrance/Entrance_Text" unique_id=1589748307]
+offset_left = 823.0
+offset_top = 28.0
+offset_right = 892.0
+offset_bottom = 51.0
+scale = Vector2(1.8453519, 2.403909)
+text = "Entrance"
+metadata/_edit_use_anchors_ = true
+
+[node name="Workstation" type="StaticBody2D" parent="." unique_id=1853918677]
+position = Vector2(188.99529, 36.83694)
+script = ExtResource("1_rxnvo")
+data = SubResource("Resource_0deml")
+
+[node name="Polygon2D" type="Polygon2D" parent="Workstation" unique_id=1019064527]
+position = Vector2(1, 1)
+color = Color(0.47843137, 0.3882353, 0.8156863, 1)
+polygon = PackedVector2Array(0, -1, 55, -1, 55, 40, 0, 40)
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Workstation" unique_id=1109717800]
+position = Vector2(28.553246, 20.575592)
+scale = Vector2(2.686001, 1.9690443)
+
+[node name="Workstation_Text" type="CanvasLayer" parent="Workstation" unique_id=805658170]
+
+[node name="Label" type="Label" parent="Workstation/Workstation_Text" unique_id=145617002]
+offset_left = 571.0
+offset_top = 145.0
+offset_right = 667.0
+offset_bottom = 168.0
+scale = Vector2(1.497022, 2.1679683)
+text = "Workstation"
+metadata/_edit_use_anchors_ = true
+
+[node name="Break_Room" type="StaticBody2D" parent="." unique_id=1126099000]
+position = Vector2(87.69924, 139.38303)
+script = ExtResource("1_rxnvo")
+data = SubResource("Resource_8khs0")
+
+[node name="Polygon2D" type="Polygon2D" parent="Break_Room" unique_id=1548762365]
+position = Vector2(1, 1)
+color = Color(0.47843137, 0.3882353, 0.24705882, 1)
+polygon = PackedVector2Array(0, -1, 55, -1, 55, 40, 0, 40)
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Break_Room" unique_id=294425066]
+position = Vector2(28.553255, 20.57559)
+scale = Vector2(2.631614, 1.9424948)
+
+[node name="Workstation_Text" type="CanvasLayer" parent="Break_Room" unique_id=1790018498]
+
+[node name="Label" type="Label" parent="Break_Room/Workstation_Text" unique_id=1838829881]
+offset_left = 268.99997
+offset_top = 454.0
+offset_right = 364.99997
+offset_bottom = 477.0
+scale = Vector2(1.497022, 2.1679683)
+text = "Break Room"
+metadata/_edit_use_anchors_ = true
+
+[node name="NavigationRegion2D" type="NavigationRegion2D" parent="." unique_id=161064037]
+position = Vector2(-0.3399196, 0)
+navigation_polygon = SubResource("NavigationPolygon_0deml")
