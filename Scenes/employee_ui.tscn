@@ -1,0 +1,34 @@
+[gd_scene format=3 uid="uid://cancuco4lrvx0"]
+
+[ext_resource type="Script" uid="uid://bohjfkegcdbe6" path="res://Scripts/employee_ui.gd" id="1_bqnad"]
+[ext_resource type="Texture2D" uid="uid://cachroeigtc17" path="res://Assets/CustomAssets/Employees.png" id="2_nk28q"]
+[ext_resource type="Texture2D" uid="uid://627axenfpuq" path="res://Assets/CustomAssets/tile_0022.png" id="3_r3dwx"]
+
+[sub_resource type="Theme" id="Theme_r3dwx"]
+
+[node name="EmployeeUI" type="CanvasLayer" unique_id=1317588434]
+script = ExtResource("1_bqnad")
+
+[node name="EmployeesButton" type="Button" parent="." unique_id=1115506108]
+texture_filter = 1
+offset_left = -144.00002
+offset_top = 1.0
+offset_right = -72.000015
+offset_bottom = 41.0
+scale = Vector2(1.977, 1.588)
+icon = ExtResource("2_nk28q")
+
+[node name="EmployeePanel" type="PanelContainer" parent="." unique_id=1768366326]
+offset_right = 40.0
+offset_bottom = 40.0
+scale = Vector2(0.95800966, 0.6458363)
+
+[node name="VBoxContainer" type="VBoxContainer" parent="EmployeePanel" unique_id=796301763]
+layout_mode = 2
+theme = SubResource("Theme_r3dwx")
+
+[node name="NinePatchRect" type="NinePatchRect" parent="EmployeePanel" unique_id=120145331]
+show_behind_parent = true
+texture_filter = 1
+layout_mode = 2
+texture = ExtResource("3_r3dwx")

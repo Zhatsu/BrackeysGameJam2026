@@ -1,0 +1,153 @@
+[gd_scene format=3 uid="uid://bt17p5lsowodm"]
+
+[ext_resource type="Script" uid="uid://b1u4vhdx45nhq" path="res://Scripts/hire_ui.gd" id="1_tmfeb"]
+[ext_resource type="Texture2D" uid="uid://jplnl0imhy57" path="res://Assets/CustomAssets/Hire.png" id="2_3agpq"]
+[ext_resource type="Texture2D" uid="uid://cofcfy4gecnqd" path="res://Assets/CustomAssets/Buy.png" id="2_pwj2f"]
+[ext_resource type="Texture2D" uid="uid://627axenfpuq" path="res://Assets/CustomAssets/tile_0022.png" id="4_6wrd3"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_bhunq"]
+
+[node name="HireUI" type="CanvasLayer" unique_id=646003416]
+script = ExtResource("1_tmfeb")
+
+[node name="HireButton" type="Button" parent="." unique_id=1652907869]
+texture_filter = 1
+offset_left = -144.00002
+offset_top = 2.0
+offset_right = -72.000015
+offset_bottom = 42.0
+scale = Vector2(1.977, 1.588)
+icon = ExtResource("2_3agpq")
+
+[node name="CandidatePanel" type="PanelContainer" parent="." unique_id=741434316]
+offset_right = 40.0
+offset_bottom = 40.0
+scale = Vector2(11.761, 7.325)
+theme_override_styles/panel = SubResource("StyleBoxEmpty_bhunq")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="CandidatePanel" unique_id=1332658889]
+layout_mode = 2
+
+[node name="Slot1" type="HBoxContainer" parent="CandidatePanel/VBoxContainer" unique_id=145123882]
+layout_mode = 2
+
+[node name="Control" type="Control" parent="CandidatePanel/VBoxContainer/Slot1" unique_id=2034303491]
+layout_mode = 2
+
+[node name="NameLabel" type="Label" parent="CandidatePanel/VBoxContainer/Slot1/Control" unique_id=471873075]
+layout_mode = 0
+offset_left = 6.717116
+offset_top = 8.600683
+offset_right = 93.86712
+offset_bottom = 31.600683
+scale = Vector2(0.077, 0.317)
+
+[node name="EfficiencyLabel" type="Label" parent="CandidatePanel/VBoxContainer/Slot1/Control" unique_id=1281339864]
+layout_mode = 0
+offset_left = 14.199472
+offset_top = 8.600683
+offset_right = 101.34947
+offset_bottom = 31.600683
+scale = Vector2(0.077, 0.317)
+
+[node name="RiskLabel" type="Label" parent="CandidatePanel/VBoxContainer/Slot1/Control" unique_id=764992510]
+layout_mode = 0
+offset_left = 21.42675
+offset_top = 8.600682
+offset_right = 108.57676
+offset_bottom = 31.600681
+scale = Vector2(0.077, 0.317)
+
+[node name="HireButton" type="Button" parent="CandidatePanel/VBoxContainer/Slot1/Control" unique_id=478398667]
+texture_filter = 1
+layout_mode = 0
+offset_left = 27.03852
+offset_top = 7.6450515
+offset_right = 67.03852
+offset_bottom = 47.64505
+scale = Vector2(0.14963742, 0.2163741)
+icon = ExtResource("2_pwj2f")
+
+[node name="Slot2" type="HBoxContainer" parent="CandidatePanel/VBoxContainer" unique_id=415229712]
+layout_mode = 2
+
+[node name="Control" type="Control" parent="CandidatePanel/VBoxContainer/Slot2" unique_id=1775293411]
+layout_mode = 2
+
+[node name="NameLabel" type="Label" parent="CandidatePanel/VBoxContainer/Slot2/Control" unique_id=654374772]
+layout_mode = 0
+offset_left = 6.7171164
+offset_top = 13.2013645
+offset_right = 93.86712
+offset_bottom = 36.20137
+scale = Vector2(0.077, 0.317)
+
+[node name="EfficiencyLabel" type="Label" parent="CandidatePanel/VBoxContainer/Slot2/Control" unique_id=1685903398]
+layout_mode = 0
+offset_left = 14.199117
+offset_top = 13.2013645
+offset_right = 101.34912
+offset_bottom = 36.201363
+scale = Vector2(0.077, 0.317)
+
+[node name="RiskLabel" type="Label" parent="CandidatePanel/VBoxContainer/Slot2/Control" unique_id=1150713538]
+layout_mode = 0
+offset_left = 21.427116
+offset_top = 13.2013645
+offset_right = 108.577126
+offset_bottom = 36.201363
+scale = Vector2(0.077, 0.317)
+
+[node name="HireButton" type="Button" parent="CandidatePanel/VBoxContainer/Slot2/Control" unique_id=2144706473]
+layout_mode = 0
+offset_left = 27.038517
+offset_top = 13.201365
+offset_right = 67.03851
+offset_bottom = 53.201366
+scale = Vector2(0.15, 0.216)
+icon = ExtResource("2_pwj2f")
+
+[node name="Slot3" type="HBoxContainer" parent="CandidatePanel/VBoxContainer" unique_id=420899950]
+layout_mode = 2
+
+[node name="Control" type="Control" parent="CandidatePanel/VBoxContainer/Slot3" unique_id=1803931195]
+layout_mode = 2
+
+[node name="NameLabel" type="Label" parent="CandidatePanel/VBoxContainer/Slot3/Control" unique_id=2099643036]
+layout_mode = 0
+offset_left = 6.7171164
+offset_top = 17.39249
+offset_right = 93.86712
+offset_bottom = 40.39249
+scale = Vector2(0.077, 0.317)
+
+[node name="EfficiencyLabel" type="Label" parent="CandidatePanel/VBoxContainer/Slot3/Control" unique_id=749026794]
+layout_mode = 0
+offset_left = 14.199
+offset_top = 17.392
+offset_right = 101.349
+offset_bottom = 40.392
+scale = Vector2(0.077, 0.317)
+
+[node name="RiskLabel" type="Label" parent="CandidatePanel/VBoxContainer/Slot3/Control" unique_id=1316594178]
+layout_mode = 0
+offset_left = 21.427
+offset_top = 17.392
+offset_right = 108.577
+offset_bottom = 40.392
+scale = Vector2(0.077, 0.317)
+
+[node name="HireButton" type="Button" parent="CandidatePanel/VBoxContainer/Slot3/Control" unique_id=1568099435]
+layout_mode = 0
+offset_left = 27.038517
+offset_top = 17.802048
+offset_right = 67.03851
+offset_bottom = 57.802048
+scale = Vector2(0.15, 0.216)
+icon = ExtResource("2_pwj2f")
+
+[node name="NinePatchRect" type="NinePatchRect" parent="CandidatePanel" unique_id=1660564228]
+show_behind_parent = true
+texture_filter = 1
+layout_mode = 2
+texture = ExtResource("4_6wrd3")

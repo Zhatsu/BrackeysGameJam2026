@@ -17,9 +17,13 @@ func _register_pois() -> void:
 func get_poi(type: POIData.POIType) -> PointOfInterest:
 	return poi_by_type.get(type)
 
-# level_main.gd
-func _spawn_worker() -> void:
+func _on_worker_hired(worker_name: String = "Worker", stats:WorkerStats = null) -> void:
+	_spawn_worker(worker_name, stats)
+
+func _spawn_worker(worker_name: String = "Worker", stats: WorkerStats = null) -> void:
 	var worker = worker_scene.instantiate()
+	worker.name = worker_name
+	worker.stats = stats
 	add_child(worker)
 	var entrance := get_poi(POIData.POIType.ENTRANCE)
 	worker.global_position = entrance.global_position
@@ -31,6 +35,22 @@ func _spawn_worker() -> void:
 
 	worker.start_route(loop_pois)
 	
+func _load_names() -> Array[String]:
+	var names: Array[String] = []
+	var file := FileAccess.open("res://Resources/names.json", FileAccess.READ)
+	if file == null:
+		push_warning("names.json not found. Using spare names instead")
+		return ["klynn", "Denji-san", "JOHN DAMAGE"]
+	var content := file.get_as_text()
+	var parsed = JSON.parse_string(content)
+	if parsed is Array:
+		for n in parsed:
+			names.append(str(n))
+	else:
+		for n in content.split(","):
+			names.append(n.strip_edges())
+	return names
+
 func _ready() -> void:
 	_register_pois()
-	_spawn_worker()
+	HireManager.worker_hired.connect(_on_worker_hired)

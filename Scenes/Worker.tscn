@@ -2,6 +2,7 @@
 
 [ext_resource type="Script" uid="uid://bl3ociwa5trqy" path="res://Scripts/worker.gd" id="1_vwm8u"]
 [ext_resource type="Texture2D" uid="uid://feynsnbojexe" path="res://Assets/CustomAssets/worker1.png" id="2_vwm8u"]
+[ext_resource type="Script" uid="uid://fp7gpcclrrbj" path="res://Scripts/highlight_ring.gd" id="3_s0wpu"]
 
 [sub_resource type="Animation" id="Animation_vwm8u"]
 length = 0.001
@@ -76,6 +77,7 @@ size = Vector2(119, 114)
 
 [node name="CharacterBody2D" type="CharacterBody2D" unique_id=660683282]
 scale = Vector2(0.43, 0.43)
+collision_layer = 2
 script = ExtResource("1_vwm8u")
 move_speed = 200.0
 
@@ -103,3 +105,15 @@ shape = SubResource("RectangleShape2D_bhunq")
 [node name="NavigationAgent2D" type="NavigationAgent2D" parent="." unique_id=1023264056]
 avoidance_enabled = true
 max_speed = 9999999.0
+
+[node name="WorkProgressBar" type="ProgressBar" parent="." unique_id=750872968]
+visible = false
+modulate = Color(0, 0.93229395, 0.93738663, 1)
+offset_left = -30.232555
+offset_top = -37.2093
+offset_right = 30.23256
+offset_bottom = -28.813957
+show_percentage = false
+
+[node name="HighlightRing" type="Node2D" parent="." unique_id=856525237]
+script = ExtResource("3_s0wpu")
